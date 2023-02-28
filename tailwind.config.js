@@ -17,7 +17,8 @@ module.exports = {
       backgroundColor:{
         bgDarkViolet: 'var(--color-dark-violet)',
         bgVeryViolet: 'var(--color-very-dark-violet)',
-        bgGray: 'var(--color-gray)',
+        bgGray: 'var(--color-grayish-violet)',
+        bgCyan: 'var(--color-cyan)'
       }
     },
   },
