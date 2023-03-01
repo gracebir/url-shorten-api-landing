@@ -19,6 +19,10 @@ module.exports = {
         bgVeryViolet: 'var(--color-very-dark-violet)',
         bgGray: 'var(--color-grayish-violet)',
         bgCyan: 'var(--color-cyan)'
+      },
+      backgroundImage: {
+        'shorten-desk':"url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-shorten-desktop_lm9lz1.svg')",
+        'shorten-mob': "url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-shorten-mobile_wzraxw.svg')"
       }
     },
   },
