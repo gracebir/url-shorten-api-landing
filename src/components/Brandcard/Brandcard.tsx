@@ -10,7 +10,7 @@ export type brandCardProp = {
 function Brandcard({icon, title, detail, className=""}: brandCardProp) {
   return (
 <div className={`${className} w-[80%] mx-auto md:w-100% z-[999]`}>
-        <div className='p-6 bg-bgDarkViolet w-[6rem] md:w-[7rem] h-[6rem] md:h-[7rem] relative mb-[-3rem] md:mb-[-3.2rem] z-[999] rounded-full mx-auto md:mx-8 flex items-center justify-center'>
+        <div className='p-6 bg-bgDarkViolet w-[6rem] md:w-[7rem] h-[6rem] md:h-[7rem] relative mb-[-3rem] md:mb-[-3.2rem] z-[999] rounded-full mx-auto lg:mx-8 flex items-center justify-center'>
             <span>{icon}</span>
         </div>
         <div className='bg-white px-6 md:px-10 pt-16 md:pt-24 pb-6 md:pb-12 rounded-md z-[-1]'>

@@ -15,14 +15,14 @@ const cardData: Array<brandCardProp> = [
     title: "Detailed Records",
     detail:
       "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
-    className: "md:mt-[3.5rem]",
+    className: "md:mt-0 lg:mt-[3.5rem]",
   },
   {
     icon: customizable,
     title: "Fully Customizable",
     detail:
       "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
-    className: "md:mt-[7rem]",
+    className: "md:mt-0 lg:mt-[7rem]",
   },
 ];
 
@@ -36,7 +36,7 @@ function Brand() {
         </div>
       <div>
         {/* <div className="bg-clCyan container w-[10px] md:w-full h-[120vh] md:h-[10px] mx-auto"></div> */}
-        <div className="flex flex-col gap-8 md:container md:mx-auto md:flex-row md:gap-8">
+        <div className="flex flex-col gap-8 lg:container lg:mx-auto lg:flex-row md:gap-8">
           {cardData.map((card, i) => (
             <Brandcard
               icon={card.icon}
