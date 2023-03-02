@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './components/Banner/Banner';
+import Boost from './components/Boost/Boost';
 import Brand from './components/Brand/Brand';
 import NavBar from './components/NavBar/NavBar';
 import Shorten from './components/Shorten/Shorten';
@@ -11,6 +12,7 @@ function App() {
       <Banner/>
       <Shorten/>
       <Brand/>
+      <Boost/>
     </div>
   );
 }
