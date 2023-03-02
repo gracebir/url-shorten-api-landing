@@ -22,7 +22,9 @@ module.exports = {
       },
       backgroundImage: {
         'shorten-desk':"url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-shorten-desktop_lm9lz1.svg')",
-        'shorten-mob': "url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-shorten-mobile_wzraxw.svg')"
+        'shorten-mob': "url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-shorten-mobile_wzraxw.svg')",
+        'boost-desk': "url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-boost-desktop_vk5r1o.svg')",
+        'boost-mob': "url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677652957/bg-boost-mobile_schxff.svg')"
       }
     },
   },
