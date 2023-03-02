@@ -35,7 +35,7 @@ function Brand() {
   advanced statistics dashboard.</p>
         </div>
       <div>
-        <div className="bg-clCyan container w-[10px] md:w-full h-[120vh] md:h-[10px] mx-auto absolute right-0 left-0 md:top-[187vh]"></div>
+        {/* <div className="bg-clCyan container w-[10px] md:w-full h-[120vh] md:h-[10px] mx-auto"></div> */}
         <div className="flex flex-col gap-8 md:container md:mx-auto md:flex-row md:gap-8">
           {cardData.map((card, i) => (
             <Brandcard
