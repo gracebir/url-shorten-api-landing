@@ -6,7 +6,7 @@ const navButtons = ["Login", "Sign Up"];
 function NavBarMobile() {
   return (
     <div className="absolute h-screen left-0 w-full top-24 transition-all ease-out duration-500 md:hidden">
-      <div className="relative bg-bgDarkViolet h-[45vh] w-[85%] mx-auto rounded-xl px-8 py-8 text-white">
+      <div className="relative bg-bgDarkViolet h-[53vh] w-[85%] mx-auto rounded-xl px-8 py-8 text-white">
         <div className="flex flex-col items-center gap-7">
           {navItems.map((navItem, i) => (
             <li className="list-none font-bold" key={i}>
