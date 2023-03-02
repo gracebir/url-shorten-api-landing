@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './components/Banner/Banner';
 import Boost from './components/Boost/Boost';
 import Brand from './components/Brand/Brand';
+import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
 import Shorten from './components/Shorten/Shorten';
 
@@ -13,6 +14,7 @@ function App() {
       <Shorten/>
       <Brand/>
       <Boost/>
+      <Footer/>
     </div>
   );
 }
