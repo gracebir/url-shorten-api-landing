@@ -1,18 +1,35 @@
 import React, { useState } from 'react'
+import { shortenResult, shortUrl } from './request'
 
-type shortCard = {
-    shorten: string
-    setShorten: React.Dispatch<React.SetStateAction<string>>
+export type shortType = {
+    full_short_link: string,
+    original_link: string
 }
 
-function ShortenCard({shorten, setShorten}:shortCard) {
+type shortenProps = {
+    shortData: Array<shortType>
+    setShortData: React.Dispatch<React.SetStateAction<shortType[]>> 
+}
+
+function ShortenCard({shortData, setShortData}:shortenProps) {
+    const [url, setUrl] = useState("")
     const [error, setError] = useState(false)
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const [shorten, setShorten] = useState<shortenResult>()
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        if(!shorten){
+        if(!url){
             setError(true)
         } else {
             setError(false)
+            setShorten(await shortUrl(url))
+            if(shorten){
+                const newShortens = {
+                    full_short_link: shorten.result.full_short_link,
+                    original_link: shorten.result.original_link
+                }
+                setShortData([newShortens])
+                localStorage.setItem("shorten",JSON.stringify(shortData))
+            }
         }
     }
   return (
@@ -21,9 +38,9 @@ function ShortenCard({shorten, setShorten}:shortCard) {
             <input 
             className={`px-3 md:px-6 py-3 md:py-4 rounded-md outline-none text-[1rem] md:text-xl ${error ? `border-clRed border-solid border-[3px] md:w-full text-clRed`:`border-none`}`} 
             type="text" 
-            value={shorten}
+            value={url}
             placeholder='Shorten a link here...'
-            onChange={(e)=> setShorten(e.target.value)}
+            onChange={(e)=> setUrl(e.target.value)}
              />
             {error && (
                 <span className='text-[.69em] italic text-clRed md:text-[1rem]'>Please add a link</span>
