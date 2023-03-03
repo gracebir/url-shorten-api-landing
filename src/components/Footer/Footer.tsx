@@ -31,7 +31,7 @@ function Footer() {
             <h1 className="font-bold">{item.title}</h1>
             <div className="flex flex-col gap-2 items-center lg:items-start">
               {item.items.map((link, i) => (
-                <a className="text-clGrayish hover:text-clCyan" key={i} href="">
+                <a className="text-clGrayish hover:text-clCyan" key={i} href={`#router${i}`}>
                   {link}
                 </a>
               ))}
@@ -40,7 +40,7 @@ function Footer() {
         ))}
         <div className="flex gap-4">
            {socialIcons.map((Social, i)=> (
-            <a className="cursor-pointer hover:text-clCyan" href="#" key={i}><Social size={30}/></a>
+            <a className="cursor-pointer hover:text-clCyan" href={`#social${i}`} key={i}><Social size={30}/></a>
            ))}
         </div>
       </div>
