@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CardShortLink from '../CardShortenLink/CardShortLink'
 import ShortenCard, { shortType } from '../ShortenCard/ShortenCard'
 
 // const shortens:Array<shortType> = JSON.parse(localStorage.getItem("shorten")!)
-
-let shortDatas:Array<shortType> = []
-console.log("jjsjs",JSON.parse(localStorage.getItem("shorten")!))
 function Shorten() {
-  const [shortData, setShortData] = useState<Array<shortType>>([...shortDatas])
-  console.log(shortData)
+  const [shortData, setShortData] = useState<Array<shortType>>([])
+  useEffect(()=> {
+    let dataLocal:Array<shortType> = JSON.parse(localStorage.getItem("shorten")!)
+    if(dataLocal){
+      setShortData(()=> [...dataLocal])
+    }
+  },[])
   return (
     <div className='min-h-[20vh] bg-gray-300'>
       <ShortenCard shortData={shortData} setShortData={setShortData}/>

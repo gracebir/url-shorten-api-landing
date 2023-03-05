@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { shortenResult, shortUrl } from './request'
+import { shortUrl } from './request'
 
 export type shortType = {
     full_short_link: string,
@@ -11,27 +11,31 @@ type shortenProps = {
     setShortData: React.Dispatch<React.SetStateAction<shortType[]>> 
 }
 
+const localData:Array<shortType> = []
+
 function ShortenCard({shortData, setShortData}:shortenProps) {
     const [url, setUrl] = useState("")
     const [error, setError] = useState(false)
-    const [shorten, setShorten] = useState<shortenResult>()
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if(!url){
             setError(true)
         } else {
             setError(false)
-            setShorten(await shortUrl(url))
-            if(shorten){
+            const response = await shortUrl(url)
+            if(response){
                 const newShortens = {
-                    full_short_link: shorten.result.full_short_link,
-                    original_link: shorten.result.original_link
+                    full_short_link: response.result.full_short_link,
+                    original_link: response.result.original_link
                 }
-                setShortData([newShortens])
-                localStorage.setItem("shorten",JSON.stringify(shortData))
+                console.log(response)
+                setShortData((data) => [...data, newShortens])
+                localData.push(newShortens)
+                localStorage.setItem("shorten",JSON.stringify(localData))
             }
         }
     }
+
   return (
     <form onSubmit={handleSubmit} className='mx-8 p-6 md:p-12 bg-bgDarkViolet absolute left-0 right-0 top-[105vh] md:top-[90vh] bg-shorten-mob md:bg-shorten-desk bg-no-repeat bg-container md:bg-cover bg-right-top md:bg-right-top md:mx-auto md:container md:bg-container flex flex-col md:flex-row md:items-baseline gap-4 rounded-md min-h-[10vh]'>
         <div className='flex flex-col gap-2 w-full'>
